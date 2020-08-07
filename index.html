@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>Tres Amigoz</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header{
+            position: absolute;
+            width: 60%;
+            padding: 0 5%;
+            margin: 0 15%;
+            height: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 0.5fr;
+            z-index: 3;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            transition: 0.3s;
+        }
+
+        header > div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .logo{
+            background-image: url('logo.png');
+            background-size: cover;
+            background-position-y: center;
+        }
+
+        section{
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(20, 20, 20);
+        }
+
+        .s1{
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .im{
+            width: 100%;
+            height: 70vh;
+        }
+
+        .dubai{
+            width: 100%;
+            height: 70vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url('dubai.jpg');
+            background-position-y: -500px;
+            transform: scaleX(-1);
+        }
+
+        .astana{
+            width: 100%;
+            height: 70vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url('astana.jpg');
+            transform: scaleX(-1);
+            background-position-y: -150px;
+            position: fixed;
+            z-index: -1;
+        }
+
+        .fade{
+            width: 100%;
+            height: 70vh;
+            background-color: rgba(20, 20, 20, 0.45);
+        }
+
+        .imframe{
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 70vh;
+            background-image: url('frame.png');
+            background-size: cover;
+            background-position-y: -250px;
+            transform: scaleX(1);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .heading{
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-size: 100px;
+            margin-bottom: 120px;
+        }
+
+        .subheading{
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-size: 25px;
+            margin-bottom: 100px;
+        }
+
+        .text{
+            position: absolute;
+            width: 40%;
+            margin-bottom: -150px;
+            height: 225px;
+        }
+
+        .post{
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        .buttons{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn{
+            position: absolute;
+            width: 110px;
+            height: 30px;
+            border: none;
+            border-radius: 15px;
+            font-family: 'Montserrat', sans-serif;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .b1{
+            margin-right: 135px;
+            color:rgb(20, 20, 20);
+        }
+
+        .b1:hover{
+            border: 1px solid white;
+            background: none;
+            color: white;
+        }
+
+        .b2{
+            margin-right: -135px;
+            background-color: rgb(20, 20, 20);
+            color: white;
+        }
+
+        .b2:hover{
+            transform: translateX(7.5px);
+        }
+
+        .lan{
+            outline: none;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            align-self: center;
+            justify-self: center;
+            border: none;
+            border-radius: 15px;
+            background-image: url('https://www.wur.nl/upload/a654ceee-dde1-4a19-9382-7e3c9b3212ff_Flag%20USA.png');
+            background-size: cover;
+        }
+
+        .dropdown{
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .dd-name{
+            margin-top: 30px;
+            margin-left: 15px;
+        }
+
+        .dd-context{
+            position: absolute;
+            display: none;
+            margin-top: 15px;
+            min-width: 100px;
+            margin-left: -10px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+            background-color: white;
+        }
+
+        .dd-i{
+            margin: 5px 0;
+        }
+
+        .dd-context > .dd-i > a{
+            color: rgb(20, 20, 20);
+        }
+
+        .dropdown:hover > .dd-context{
+            display: block;
+        }
+
+        .fill{
+            position: absolute;
+            width: 100%;
+            height: 30vh;
+            background-color: rgb(20, 20, 20);
+            z-index: 1;
+        }
+
+        .kek{
+            width: 100%;
+            height: 30vh;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <div></div>
+        <div><a href="index.html">Home</a></div>
+        <div class="dropdown">
+            <div class="dd-name">Services</div>
+            <div class="dd-context">
+                <div class="dd-i"><a href="finance.html">Finance</a></div>
+                <div class="dd-i"><a href="design.html">Design & Style</a></div>
+                <div class="dd-i"><a href="webdev.html">Web development</a></div>
+            </div>
+        </div>
+        <div><a href="portfolio.html">Portfolio</a></div>
+        <div class="dropdown">
+            <div class="dd-name">Company</div>
+            <div class="dd-context">
+                <div class="dd-i"><a href="team.html">Team Members</a></div>
+                <div class="dd-i"><a href="blog.html">Blog Posts</a></div>
+                <div class="dd-i"><a href="jobs.html">Job Vacancies</a></div>
+            </div>
+        </div>
+        <div><a href="contact.html">Contact</a></div>
+        <div></div>
+        <button class="lan"></button>
+    </header>
+
+    <section style="background: none;" class="s1">
+        <div class="im">
+            <div class="astana">
+                <div class="fade"></div>
+            </div>
+            <div class="imframe">
+                <h1 class="heading">CONSULTING</h1>
+                <h1 class="subheading">company</h1>
+                <div class="text">
+                        <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quos enim explicabo velit beatae tempore aliquam iste corrupti mollitia laudantium earum, porro odit quisquam.</p>
+                        <div class="buttons">
+                            <button class="btn b1">
+                                order
+                            </button>
+                            <button class="btn b2">
+                                explore
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phone"></div>
+        </div>
+        <div class="fill">
+        </div>
+        <div class="kek">
+        </div>
+    </section>
+
+    <section>
+
+    </section>
+</body>
+</html>
